@@ -14,6 +14,7 @@ import struct
 import numpy as np
 import math
 from stl import stl as stl
+from stl.stl import AUTOMATIC
 import os
 
 class solidSTL():
@@ -54,7 +55,7 @@ class solidSTL():
     def save(self, fp):
         print 'Saving file to: ', fp
         print 'pre-save: is mesh a file: ', os.path.isfile(fp)
-        self.mesh.save(fp, fh=open(fp,'wb'),mode=2, update_normals=True)
+        self.mesh.save(fp, fh=open(fp,'wb'),mode=AUTOMATIC, update_normals=True)
         print 'post-save: is mesh a file: ', os.path.isfile(fp)
 
     def setaoa(self, aoa, units="degrees"):
